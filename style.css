@@ -1,443 +1,525 @@
-/* =========================================================
-   PURPLE FANTASY UPGRADE 💜
-   Append this section to the END of style.css
-   ========================================================= */
+/* ==========================================================================
+   CUTE PURPLE THEME & GLOBAL RESETS
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 :root {
-  --bg-purple-dark: #10051f;
-  --bg-purple-mid: #261044;
-  --bg-purple-soft: #54217b;
-  --pink-accent: #ff85c2;
-  --pink-soft: #edc4ff;
-  --gold-glow: #ffe8a3;
-  --glass-bg: rgba(36, 15, 66, 0.76);
-  --glass-border: rgba(233, 183, 255, 0.38);
-  --text-light: #fff7ff;
+  --bg-purple-dark: #12072b;
+  --bg-purple-mid: #251047;
+  --bg-purple-soft: #3b176d;
+  --pink-accent: #ff75a0;
+  --pink-soft: #f7aef8;
+  --gold-glow: #ffe57f;
+  --glass-bg: rgba(35, 15, 60, 0.68);
+  --glass-border: rgba(247, 174, 248, 0.25);
+  --text-light: #f3f4f6;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 75px;
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at 20% 20%, #3b176d 0%, #251047 50%, #12072b 100%);
+  color: var(--text-light);
+  position: relative;
 }
 
-body {
-  background:
-    radial-gradient(ellipse at 12% 12%, rgba(151, 76, 213, 0.28), transparent 35%),
-    radial-gradient(ellipse at 88% 45%, rgba(255, 117, 192, 0.13), transparent 36%),
-    linear-gradient(145deg, #170729 0%, #32114f 48%, #10051f 100%);
-  background-attachment: fixed;
-  color: #fff7ff;
-}
-
+/* Background Canvas */
 #bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 1;
   pointer-events: none;
 }
 
+/* ==========================================================================
+   MOON IN TOP-LEFT CORNER WITH SPACE
+   ========================================================================== */
 .sky-container {
-  z-index: 2;
-}
-
-.app-container {
-  z-index: 5;
-  padding-top: 35px;
-  padding-bottom: 60px;
-}
-
-/* More dreamy moonlight */
-.natural-moon {
-  background:
-    radial-gradient(circle at 32% 27%, #fffef1 0%, #fff2cc 42%,
-    #e9d7ff 100%);
-  box-shadow:
-    0 0 20px rgba(255, 255, 240, 0.9),
-    0 0 55px rgba(236, 196, 255, 0.65),
-    0 0 100px rgba(186, 127, 255, 0.25);
-}
-
-.tree-container {
-  opacity: 0.9;
-}
-
-/* Glowing title */
-.sparkle-text {
-  line-height: 1.25;
-  filter: drop-shadow(0 0 14px rgba(255, 133, 194, 0.2));
-  animation: titleFloat 4s ease-in-out infinite;
-}
-
-@keyframes titleFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-.sub-sparkle {
-  line-height: 1.8;
-  text-shadow: 0 0 14px rgba(233, 183, 255, 0.3);
-}
-
-/* Soft glowing glass cards */
-.glass-card {
-  background: linear-gradient(
-    140deg,
-    rgba(79, 36, 113, 0.66),
-    rgba(30, 11, 53, 0.86)
-  );
-  border: 1px solid rgba(233, 183, 255, 0.28);
-  box-shadow:
-    0 16px 45px rgba(8, 0, 20, 0.38),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.glass-card:hover {
-  border-color: rgba(255, 190, 230, 0.48);
-  box-shadow:
-    0 18px 48px rgba(8, 0, 20, 0.42),
-    0 0 24px rgba(202, 139, 255, 0.09);
-}
-
-.card-heading {
-  color: #f4d1ff;
-}
-
-/* Birthday cake glow */
-.cake {
-  filter: drop-shadow(0 0 16px rgba(255, 117, 160, 0.17));
-}
-
-.flame {
-  transform-origin: center bottom;
-}
-
-.layer-bottom {
-  background: linear-gradient(135deg, #643d8c, #41205d);
-}
-
-.layer-middle {
-  background: linear-gradient(135deg, #ff9bc9, #e65b9d);
-}
-
-.layer-top {
-  background: linear-gradient(135deg, #fff4fc, #e8c8ff);
-}
-
-.icing {
-  background: linear-gradient(90deg, #fff7fc, #ffe3f4);
-}
-
-/* Make the gift section work vertically */
-.gift-section {
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  gap: 22px;
-}
-
-.gift-box {
-  width: 115px;
-  height: 95px;
-  border: 2px solid rgba(255, 255, 255, 0.45);
-  background: linear-gradient(135deg, #ff9ccf, #a86bff);
-  box-shadow:
-    0 0 20px rgba(255, 117, 192, 0.3),
-    0 10px 25px rgba(0, 0, 0, 0.3);
-  animation: giftBounce 2.8s ease-in-out infinite;
-  outline-offset: 5px;
-}
-
-.gift-box::before {
-  content: "";
-  position: absolute;
-  left: 42%;
+  position: fixed;
   top: 0;
-  width: 17%;
-  height: 100%;
-  background: rgba(255, 239, 180, 0.95);
-  pointer-events: none;
-}
-
-.gift-box::after {
-  content: "";
-  position: absolute;
-  top: 37%;
   left: 0;
   width: 100%;
-  height: 15%;
-  background: rgba(255, 239, 180, 0.95);
+  height: 100%;
   pointer-events: none;
-}
-
-.gift-lid {
-  position: relative;
   z-index: 2;
-  height: 45px;
-  font-size: 2.4rem;
-  line-height: 42px;
 }
 
-.gift-box.open {
-  animation: none;
-}
-
-.gift-box.open .gift-lid {
-  transform: translateY(-48px) rotate(-20deg);
-}
-
-.tap-hint {
-  position: relative;
-  z-index: 2;
-  margin-top: 13px;
-  font-size: 0.7rem;
-  text-shadow: 0 1px 5px #70205a;
-}
-
-@keyframes giftBounce {
-  0%, 100% { transform: translateY(0) rotate(0); }
-  50% { transform: translateY(-6px) rotate(1deg); }
-}
-
-/* Gift surprise message */
-.gift-message {
-  max-width: 700px;
-  width: 100%;
-  padding: 30px 24px;
-  margin: 0;
-}
-
-.gift-message.hidden {
-  display: none;
-}
-
-.gift-message-text {
-  color: #fff4ff;
-  font-size: 1.08rem;
-  line-height: 1.95;
-  white-space: pre-line;
-}
-
-.gift-reveal {
-  animation: giftReveal 0.85s ease both;
-}
-
-@keyframes giftReveal {
-  from {
-    opacity: 0;
-    transform: translateY(22px) scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Readable typewriter text */
-.typewriter-container {
-  white-space: pre-line;
-  overflow-wrap: anywhere;
-  color: #fff7ff;
-}
-
-/* Picture gallery: preserve all existing images */
-.polaroid-card {
-  box-shadow: 0 12px 28px rgba(5, 0, 18, 0.4);
-}
-
-.polaroid-card:hover {
-  box-shadow:
-    0 16px 34px rgba(8, 0, 20, 0.4),
-    0 0 22px rgba(233, 183, 255, 0.3);
-}
-
-.section-title {
-  color: #f8d9ff;
-  text-shadow: 0 0 20px rgba(233, 183, 255, 0.25);
-}
-
-/* Buttons */
-.btn,
-.music-control-btn {
-  -webkit-tap-highlight-color: transparent;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.primary-btn {
-  background: linear-gradient(135deg, #f98bc4, #9860ed);
-}
-
-.secondary-btn {
-  background: rgba(233, 183, 255, 0.12);
-  border-color: rgba(233, 183, 255, 0.32);
-}
-
-.music-control-btn {
-  background: rgba(44, 18, 73, 0.82);
-  border-color: rgba(233, 183, 255, 0.45);
-}
-
-/* Full-size photo overlay */
-.lightbox-modal {
-  z-index: 1000;
-  background: rgba(13, 3, 24, 0.96);
-  backdrop-filter: blur(10px);
-}
-
-.lightbox-content img {
-  border: 1px solid rgba(233, 183, 255, 0.3);
-  box-shadow: 0 0 35px rgba(173, 112, 255, 0.22);
-}
-
-.lightbox-open {
+.natural-moon {
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #fbedc7 60%, #e6d396 100%);
+  box-shadow: 
+    0 0 25px rgba(255, 255, 255, 0.9),
+    0 0 50px rgba(251, 237, 199, 0.6),
+    0 0 90px rgba(247, 174, 248, 0.3);
+  animation: cuteMoonGlow 4s ease-in-out infinite alternate;
   overflow: hidden;
 }
 
-/* Small screens */
-@media (max-width: 600px) {
-  .app-container {
-    padding: 15px 12px 40px;
-  }
-
-  .card-screen {
-    gap: 21px;
-  }
-
-  .top-spacer {
-    height: 65px;
-  }
-
-  .sparkle-text {
-    font-size: clamp(2rem, 8vw, 2.7rem);
-  }
-
-  .sub-sparkle {
-    font-size: 0.95rem;
-  }
-
-  .glass-card {
-    padding: 25px 17px;
-  }
-
-  .typewriter-container,
-  .gift-message-text {
-    font-size: 1rem;
-    line-height: 1.85;
-  }
-
-  .action-bar {
-    gap: 10px;
-  }
-
-  .btn {
-    padding: 11px 17px;
-    font-size: 0.9rem;
-  }
-
-  .music-control-btn {
-    top: 12px;
-    right: 12px;
-    padding: 8px 12px;
-    font-size: 0.78rem;
-  }
-
-  .natural-moon {
-    top: 14px;
-    left: 12px;
-    width: 62px;
-    height: 62px;
-  }
-
-  .tree-container {
-    width: 115px;
-    height: 185px;
-    opacity: 0.6;
-  }
-
-  .polaroid-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-    padding: 4px;
-  }
-
-  .polaroid-card {
-    padding: 8px 8px 13px;
-  }
-
-  .polaroid-frame {
-    height: 150px;
-  }
-
-  .polaroid-caption {
-    font-size: 1.15rem;
-  }
+/* Craters */
+.crater {
+  position: absolute;
+  background: rgba(185, 160, 120, 0.22);
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.25);
 }
 
-@media (max-width: 380px) {
-  .polaroid-grid {
-    grid-template-columns: 1fr;
-  }
+.crater-1 { top: 22%; left: 45%; width: 20px; height: 20px; }
+.crater-2 { top: 52%; left: 25%; width: 28px; height: 28px; }
+.crater-3 { top: 62%; left: 62%; width: 15px; height: 15px; }
+.crater-4 { top: 28%; left: 18%; width: 12px; height: 12px; }
 
-  .polaroid-frame {
-    height: 210px;
-  }
+@keyframes cuteMoonGlow {
+  0% { box-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 50px rgba(251, 237, 199, 0.6); }
+  100% { box-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 80px rgba(247, 174, 248, 0.8); }
 }
 
-/* Respect visitors who prefer less motion */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+/* Tree Silhouette with Swaying Leaves */
+.tree-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 240px;
+  height: 360px;
+  pointer-events: none;
 }
-/* Extra styling for the updated Rekha birthday HTML */
 
-.header-banner {
+.tree-svg {
   width: 100%;
-  text-align: center;
-  padding: 20px 12px;
+  height: 100%;
 }
 
-.gift-section > .section-subtitle {
+.leaf-cluster {
+  transform-origin: 50px 300px;
+  animation: swayLeaves 4s ease-in-out infinite alternate;
+}
+
+.cluster-1 { animation-duration: 3.5s; }
+.cluster-2 { animation-duration: 4.8s; animation-delay: -1.2s; }
+.cluster-3 { animation-duration: 4.0s; animation-delay: -0.6s; }
+
+@keyframes swayLeaves {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(2.5deg) scale(1.02); }
+  100% { transform: rotate(-2deg) scale(0.99); }
+}
+
+/* Clouds */
+.cloud {
+  position: absolute;
+  background: rgba(247, 174, 248, 0.08);
+  border-radius: 100px;
+  filter: blur(10px);
+  animation: floatClouds 50s linear infinite;
+}
+
+.cloud-1 { top: 12%; width: 240px; height: 70px; left: -240px; }
+.cloud-2 { top: 45%; width: 300px; height: 90px; left: -300px; animation-duration: 65s; animation-delay: -20s; }
+
+@keyframes floatClouds {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(100vw + 400px)); }
+}
+
+/* ==========================================================================
+   MUSIC CONTROL BUTTON
+   ========================================================================== */
+.music-control-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  background: rgba(247, 174, 248, 0.18);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.music-control-btn:hover {
+  background: rgba(255, 117, 160, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   APP CONTAINER & SPACERS
+   ========================================================================== */
+.app-container {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card-screen {
+  width: 100%;
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Top spacer gives space so moon & tree in top-left are visible */
+.top-spacer {
+  height: 60px;
+  width: 100%;
+}
+
+.glass-card {
+  width: 100%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Header Text */
+.sparkle-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.5rem;
+  background: linear-gradient(45deg, #ff75a0, #f7aef8, #ffe57f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 5px;
 }
 
-.gift-body {
+.sub-sparkle {
+  font-size: 1.25rem;
+  color: #e2d4f7;
+}
+
+/* ==========================================================================
+   BIRTHDAY CAKE
+   ========================================================================== */
+.cake-wrapper {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.cake {
   position: relative;
-  z-index: 1;
+  width: 180px;
+  height: 140px;
 }
 
-.signature {
-  margin-top: 18px;
-  color: #edc4ff;
-  font-family: "Sacramento", cursive;
-  font-size: 1.7rem;
+.plate {
+  position: absolute;
+  bottom: -10px;
+  left: -20px;
+  width: 220px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
 }
 
-.gift-message {
-  scroll-margin-top: 80px;
+.layer {
+  position: absolute;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
 }
 
-.polaroid-card:focus-visible,
-.gift-box:focus-visible,
-.btn:focus-visible,
-.music-control-btn:focus-visible,
-.lightbox-close:focus-visible {
-  outline: 2px solid #ffe8a3;
-  outline-offset: 4px;
+.layer-bottom { bottom: 0; height: 50px; background: #612f5a; }
+.layer-middle { bottom: 45px; height: 45px; background: #ff75a0; }
+.layer-top { bottom: 85px; height: 40px; background: #fff0f5; }
+
+.icing {
+  position: absolute;
+  top: 15px;
+  width: 100%;
+  height: 15px;
+  background: #fff;
+  border-radius: 10px;
 }
 
+.candles {
+  position: absolute;
+  top: -15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 30px;
+}
+
+.candle {
+  position: relative;
+  width: 10px;
+  height: 30px;
+  background: repeating-linear-gradient(45deg, #ff75a0, #ff75a0 5px, #fff 5px, #fff 10px);
+  border-radius: 3px;
+}
+
+.flame {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 14px;
+  background: #ff9d00;
+  border-radius: 50% 50% 20% 20%;
+  box-shadow: 0 0 10px #ff9d00, 0 0 20px #ffd700;
+  animation: flicker 0.8s infinite alternate;
+}
+
+@keyframes flicker {
+  0% { transform: translateX(-50%) scale(1); opacity: 0.9; }
+  100% { transform: translateX(-50%) scale(1.18); opacity: 1; }
+}
+
+/* ==========================================================================
+   GIFT BOX & MESSAGE CARD
+   ========================================================================== */
+.gift-section {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.gift-box {
+  width: 100px;
+  height: 90px;
+  background: #ff75a0;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 117, 160, 0.4);
+  transition: transform 0.3s;
+}
+
+.gift-box:hover { transform: scale(1.05); }
+
+.gift-lid {
+  font-size: 2.5rem;
+  text-align: center;
+  line-height: 40px;
+  transition: transform 0.6s ease;
+}
+
+.gift-box.open .gift-lid {
+  transform: translateY(-40px) rotate(-15deg);
+}
+
+.tap-hint {
+  display: block;
+  font-size: 0.72rem;
+  text-align: center;
+  color: #fff;
+  margin-top: 15px;
+}
+
+.message-card { max-width: 700px; }
+
+.card-heading {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.4rem;
+  color: var(--pink-soft);
+  margin-bottom: 15px;
+}
+
+.typewriter-container {
+  font-size: 1.18rem;
+  line-height: 1.8;
+  color: #f3f4f6;
+  min-height: 90px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   POLAROID GALLERY WITH CAPTIONS
+   ========================================================================== */
+.gallery-section {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.section-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.6rem;
+  color: #ffe57f;
+}
+
+.section-subtitle {
+  font-size: 0.9rem;
+  color: #d1c4e9;
+  margin-bottom: 25px;
+}
+
+.polaroid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 10px;
+}
+
+.polaroid-card {
+  background: #ffffff;
+  padding: 12px 12px 20px 12px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  color: #1f2937;
+}
+
+.polaroid-card:nth-child(1) { transform: rotate(-3deg); }
+.polaroid-card:nth-child(2) { transform: rotate(2deg); }
+.polaroid-card:nth-child(3) { transform: rotate(-2deg); }
+.polaroid-card:nth-child(4) { transform: rotate(4deg); }
+
+.polaroid-card:hover {
+  transform: translateY(-10px) rotate(0deg) scale(1.04);
+  box-shadow: 0 15px 35px rgba(247, 174, 248, 0.5);
+  z-index: 5;
+}
+
+.polaroid-frame {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #f3f4f6;
+}
+
+.polaroid-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.polaroid-card:hover .polaroid-frame img { transform: scale(1.08); }
+
+.polaroid-caption {
+  font-family: 'Sacramento', cursive;
+  font-size: 1.45rem;
+  font-weight: bold;
+  margin-top: 12px;
+  color: #2b2b2b;
+}
+
+/* ==========================================================================
+   BUTTONS & FOOTER
+   ========================================================================== */
+.btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #ff75a0 0%, #c84279 100%);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(255, 117, 160, 0.4);
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 117, 160, 0.6);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1px solid var(--glass-border);
+}
+
+.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-2px);
+}
+
+.action-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.final-wishes-footer {
+  margin-top: 20px;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.moon-icon { font-size: 2rem; margin-bottom: 10px; }
+.final-text { font-size: 1.1rem; line-height: 1.7; color: #e5e7eb; font-style: italic; }
+
+/* ==========================================================================
+   LIGHTBOX MODAL
+   ========================================================================== */
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.lightbox-modal.hidden { display: none; }
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.lightbox-content { max-width: 90%; max-height: 85vh; text-align: center; }
+.lightbox-content img { max-width: 100%; max-height: 75vh; border-radius: 12px; }
+.lightbox-caption { margin-top: 15px; color: #fff; font-size: 1.3rem; font-family: 'Sacramento', cursive; }
+
+/* Responsive Adjustments */
 @media (max-width: 600px) {
-  .header-banner {
-    padding: 15px 5px;
-  }
-
-  .signature {
-    font-size: 1.5rem;
-  }
+  .sparkle-text { font-size: 2.2rem; }
+  .natural-moon { width: 75px; height: 75px; top: 15px; left: 15px; }
+  .tree-container { width: 160px; height: 250px; }
+  .polaroid-grid { grid-template-columns: 1fr; }
 }
