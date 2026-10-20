@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Ehmaa! ✨</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Dynamic Canvas Background for Floating Balloons, Moving Stars, Candles & Teddy Bears -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- SKY ATMOSPHERE -->
+  <div class="sky-container">
+    
+    <!-- Natural Glowing Moon in Top-Left Corner -->
+    <div class="natural-moon">
+      <div class="crater crater-1"></div>
+      <div class="crater crater-2"></div>
+      <div class="crater crater-3"></div>
+      <div class="crater crater-4"></div>
+    </div>
+
+    <!-- Tree in Left Corner with Moving Leaves -->
+    <div class="tree-container">
+      <svg class="tree-svg" viewBox="0 0 320 450" preserveAspectRatio="xMinYMax meet">
+        <path d="M 0,450 Q 40,380 50,300 C 60,220 30,170 10,130 L 0,110 L 0,450 Z" fill="#14082e"/>
+        <path d="M 50,300 Q 90,260 140,240 Q 180,230 220,245 C 170,265 120,285 50,300 Z" fill="#14082e"/>
+        <path d="M 42,220 Q 80,180 120,160 Q 160,150 190,165 C 140,185 100,200 42,220 Z" fill="#14082e"/>
+        
+        <!-- Swaying Leaf Clusters -->
+        <g class="leaf-cluster cluster-1">
+          <ellipse cx="210" cy="235" rx="45" ry="28" fill="#2b104d" />
+          <ellipse cx="190" cy="220" rx="35" ry="22" fill="#421a75" />
+          <circle cx="230" cy="245" r="20" fill="#1e0a38" />
+        </g>
+
+        <g class="leaf-cluster cluster-2">
+          <ellipse cx="180" cy="155" rx="50" ry="30" fill="#2b104d" />
+          <ellipse cx="160" cy="140" rx="40" ry="25" fill="#421a75" />
+          <circle cx="195" cy="170" r="22" fill="#1e0a38" />
+        </g>
+
+        <g class="leaf-cluster cluster-3">
+          <ellipse cx="80" cy="110" rx="60" ry="35" fill="#2b104d" />
+          <ellipse cx="60" cy="90" rx="45" ry="28" fill="#421a75" />
+          <ellipse cx="110" cy="120" rx="35" ry="22" fill="#1e0a38" />
+        </g>
+      </svg>
+    </div>
+
+    <!-- Soft Ambient Floating Clouds -->
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+  </div>
+
+  <!-- Music Toggle Control -->
+  <button id="music-btn" class="music-control-btn" aria-label="Toggle Audio">
+    <span id="music-icon">🎵</span>
+    <span id="music-text">Play Melody</span>
+  </button>
+
+  <!-- MAIN SURPRISE CONTENT CONTAINER -->
+  <main class="app-container">
+
+    <section id="reveal-screen" class="card-screen">
+      
+      <!-- Top Spacer to give the Moon and Tree room in top left -->
+      <div class="top-spacer"></div>
+
+      <!-- Greeting Banner -->
+      <div class="header-banner">
+        <h1 class="sparkle-text">Happy Birthday, Ehmaa! 💗🎂</h1>
+        <p class="sub-sparkle">21 October 2007 ✨ Keep Shining, Beautiful Soul!</p>
+      </div>
+
+      <!-- Animated Birthday Cake Section -->
+      <div class="cake-wrapper">
+        <div class="cake">
+          <div class="plate"></div>
+          <div class="layer layer-bottom"></div>
+          <div class="layer layer-middle"></div>
+          <div class="layer layer-top"></div>
+          <div class="icing"></div>
+          <div class="drips">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="candles">
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Gift Box -->
+      <div class="gift-section">
+        <div id="gift-box" class="gift-box">
+          <div class="gift-lid">🎁</div>
+          <div class="gift-body">
+            <span class="tap-hint">Click to Open Gift!</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Personal Message Card -->
+      <div class="glass-card message-card">
+        <h2 class="card-heading">A Special Wish For You 💌</h2>
+        <div id="typewriter-text" class="typewriter-container"></div>
+      </div>
+
+      <!-- Polaroid Photo Gallery -->
+      <section class="gallery-section">
+        <h2 class="section-title">Our Precious Memories 📸</h2>
+        <p class="section-subtitle">Click any polaroid to view in full resolution</p>
+        
+        <div class="polaroid-grid">
+          
+          <!-- Polaroid 1 -->
+          <div class="polaroid-card" data-img="assets/cartoon1.jpg" data-caption="Good Friends... Better Memories ♡">
+            <div class="polaroid-frame">
+              <img src="assets/cartoon1.jpg" alt="Ehmaa & Friends Cartoon" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1513151233558-d860c5398176?w=500&auto=format&fit=crop'" />
+            </div>
+            <p class="polaroid-caption">Good Friends... Better Memories ♡</p>
+          </div>
+
+          <!-- Polaroid 2 -->
+          <div class="polaroid-card" data-img="assets/cartoon2.jpg" data-caption="Our Special Sathi ♡ (21 October 2007)">
+            <div class="polaroid-frame">
+              <img src="assets/cartoon2.jpg" alt="Ehmaa Birthday Selfie Cartoon" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=500&auto=format&fit=crop'" />
+            </div>
+            <p class="polaroid-caption">Our Special Sathi ♡ (21 October 2007)</p>
+          </div>
+
+          <!-- Polaroid 3 -->
+          <div class="polaroid-card" data-img="assets/photo1.jpg" data-caption="Keep Shining, Beautiful Soul! ✨">
+            <div class="polaroid-frame">
+              <img src="assets/photo1.jpg" alt="Ehmaa Photo 1" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=500&auto=format&fit=crop'" />
+            </div>
+            <p class="polaroid-caption">Keep Shining, Beautiful Soul! ✨</p>
+          </div>
+
+          <!-- Polaroid 4 -->
+          <div class="polaroid-card" data-img="assets/photo2.jpg" data-caption="Forever Grateful For You ❤️">
+            <div class="polaroid-frame">
+              <img src="assets/photo2.jpg" alt="Ehmaa Photo 2" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&auto=format&fit=crop'" />
+            </div>
+            <p class="polaroid-caption">Forever Grateful For You ❤️</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Action Buttons -->
+      <div class="action-bar">
+        <button id="gift-btn" class="btn secondary-btn">🎁 Open Gift</button>
+        <button id="memories-btn" class="btn secondary-btn">📸 View Memories</button>
+        <button id="replay-btn" class="btn primary-btn">✨ Replay Magic 🪄</button>
+      </div>
+
+      <!-- Final Heartfelt Footer -->
+      <footer class="final-wishes-footer glass-card">
+        <div class="moon-icon">🌙✨</div>
+        <p class="final-text">
+          "May your life always be filled with happiness, beautiful opportunities, unforgettable memories, and endless reasons to smile. Keep shining, Ehmaa! Happy Birthday, Sathi! ❤️✨"
+        </p>
+      </footer>
+
+    </section>
+
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox-modal hidden">
+    <span id="lightbox-close" class="lightbox-close">&times;</span>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Enlarged Photo" />
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
