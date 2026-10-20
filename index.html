@@ -1,24 +1,43 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday Ehmaa! ✨</title>
+
+  <meta
+    name="theme-color"
+    content="#261044"
+  />
+  <meta
+    name="description"
+    content="A magical purple birthday surprise filled with love, memories, and wishes for Rekha."
+  />
+
+  <title>Happy Birthday Rekha! 💜✨</title>
+
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Sacramento&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Your existing stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <!-- Dynamic Canvas Background for Floating Balloons, Moving Stars, Candles & Teddy Bears -->
-  <canvas id="bg-canvas"></canvas>
+  <!-- Animated stars, balloons, hearts and confetti -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-  <!-- SKY ATMOSPHERE -->
-  <div class="sky-container">
-    
-    <!-- Natural Glowing Moon in Top-Left Corner -->
+  <!-- Purple fantasy sky -->
+  <div class="sky-container" aria-hidden="true">
+
+    <!-- Glowing moon -->
     <div class="natural-moon">
       <div class="crater crater-1"></div>
       <div class="crater crater-2"></div>
@@ -26,14 +45,28 @@
       <div class="crater crater-4"></div>
     </div>
 
-    <!-- Tree in Left Corner with Moving Leaves -->
+    <!-- Magical tree -->
     <div class="tree-container">
-      <svg class="tree-svg" viewBox="0 0 320 450" preserveAspectRatio="xMinYMax meet">
-        <path d="M 0,450 Q 40,380 50,300 C 60,220 30,170 10,130 L 0,110 L 0,450 Z" fill="#14082e"/>
-        <path d="M 50,300 Q 90,260 140,240 Q 180,230 220,245 C 170,265 120,285 50,300 Z" fill="#14082e"/>
-        <path d="M 42,220 Q 80,180 120,160 Q 160,150 190,165 C 140,185 100,200 42,220 Z" fill="#14082e"/>
-        
-        <!-- Swaying Leaf Clusters -->
+      <svg
+        class="tree-svg"
+        viewBox="0 0 320 450"
+        preserveAspectRatio="xMinYMax meet"
+      >
+        <path
+          d="M 0,450 Q 40,380 50,300 C 60,220 30,170 10,130 L 0,110 L 0,450 Z"
+          fill="#14082e"
+        />
+
+        <path
+          d="M 50,300 Q 90,260 140,240 Q 180,230 220,245 C 170,265 120,285 50,300 Z"
+          fill="#14082e"
+        />
+
+        <path
+          d="M 42,220 Q 80,180 120,160 Q 160,150 190,165 C 140,185 100,200 42,220 Z"
+          fill="#14082e"
+        />
+
         <g class="leaf-cluster cluster-1">
           <ellipse cx="210" cy="235" rx="45" ry="28" fill="#2b104d" />
           <ellipse cx="190" cy="220" rx="35" ry="22" fill="#421a75" />
@@ -54,137 +87,313 @@
       </svg>
     </div>
 
-    <!-- Soft Ambient Floating Clouds -->
+    <!-- Floating clouds -->
     <div class="cloud cloud-1"></div>
     <div class="cloud cloud-2"></div>
+
   </div>
 
-  <!-- Music Toggle Control -->
-  <button id="music-btn" class="music-control-btn" aria-label="Toggle Audio">
-    <span id="music-icon">🎵</span>
+  <!-- Music control -->
+  <button
+    id="music-btn"
+    class="music-control-btn"
+    type="button"
+    aria-label="Play birthday melody"
+  >
+    <span id="music-icon" aria-hidden="true">🎵</span>
     <span id="music-text">Play Melody</span>
   </button>
 
-  <!-- MAIN SURPRISE CONTENT CONTAINER -->
+  <!-- Main birthday website -->
   <main class="app-container">
 
     <section id="reveal-screen" class="card-screen">
-      
-      <!-- Top Spacer to give the Moon and Tree room in top left -->
-      <div class="top-spacer"></div>
 
-      <!-- Greeting Banner -->
-      <div class="header-banner">
-        <h1 class="sparkle-text">Happy Birthday, Ehmaa! 💗🎂</h1>
-        <p class="sub-sparkle">21 October 2007 ✨ Keep Shining, Beautiful Soul!</p>
-      </div>
+      <div class="top-spacer" aria-hidden="true"></div>
 
-      <!-- Animated Birthday Cake Section -->
-      <div class="cake-wrapper">
+      <!-- Birthday heading -->
+      <header class="header-banner">
+        <h1 class="sparkle-text">
+          Happy Birthday, Rekha! 💜🎂
+        </h1>
+
+        <p class="sub-sparkle">
+          21 October 2007 ✨ Keep Shining, Beautiful Soul!
+        </p>
+      </header>
+
+      <!-- Animated birthday cake -->
+      <section class="cake-wrapper" aria-label="Birthday cake with candles">
         <div class="cake">
+
           <div class="plate"></div>
+
           <div class="layer layer-bottom"></div>
           <div class="layer layer-middle"></div>
           <div class="layer layer-top"></div>
+
           <div class="icing"></div>
+
           <div class="drips">
-            <span></span><span></span><span></span><span></span><span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
+
           <div class="candles">
-            <div class="candle"><div class="flame"></div></div>
-            <div class="candle"><div class="flame"></div></div>
-            <div class="candle"><div class="flame"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Interactive Gift Box -->
-      <div class="gift-section">
-        <div id="gift-box" class="gift-box">
-          <div class="gift-lid">🎁</div>
-          <div class="gift-body">
-            <span class="tap-hint">Click to Open Gift!</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Personal Message Card -->
-      <div class="glass-card message-card">
-        <h2 class="card-heading">A Special Wish For You 💌</h2>
-        <div id="typewriter-text" class="typewriter-container"></div>
-      </div>
-
-      <!-- Polaroid Photo Gallery -->
-      <section class="gallery-section">
-        <h2 class="section-title">Our Precious Memories 📸</h2>
-        <p class="section-subtitle">Click any polaroid to view in full resolution</p>
-        
-        <div class="polaroid-grid">
-          
-          <!-- Polaroid 1 -->
-          <div class="polaroid-card" data-img="assets/cartoon1.jpg" data-caption="Good Friends... Better Memories ♡">
-            <div class="polaroid-frame">
-              <img src="assets/cartoon1.jpg" alt="Ehmaa & Friends Cartoon" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1513151233558-d860c5398176?w=500&auto=format&fit=crop'" />
+            <div class="candle">
+              <div class="flame"></div>
             </div>
-            <p class="polaroid-caption">Good Friends... Better Memories ♡</p>
-          </div>
 
-          <!-- Polaroid 2 -->
-          <div class="polaroid-card" data-img="assets/cartoon2.jpg" data-caption="Our Special Sathi ♡ (21 October 2007)">
-            <div class="polaroid-frame">
-              <img src="assets/cartoon2.jpg" alt="Ehmaa Birthday Selfie Cartoon" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=500&auto=format&fit=crop'" />
+            <div class="candle">
+              <div class="flame"></div>
             </div>
-            <p class="polaroid-caption">Our Special Sathi ♡ (21 October 2007)</p>
-          </div>
 
-          <!-- Polaroid 3 -->
-          <div class="polaroid-card" data-img="assets/photo1.jpg" data-caption="Keep Shining, Beautiful Soul! ✨">
-            <div class="polaroid-frame">
-              <img src="assets/photo1.jpg" alt="Ehmaa Photo 1" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=500&auto=format&fit=crop'" />
+            <div class="candle">
+              <div class="flame"></div>
             </div>
-            <p class="polaroid-caption">Keep Shining, Beautiful Soul! ✨</p>
-          </div>
-
-          <!-- Polaroid 4 -->
-          <div class="polaroid-card" data-img="assets/photo2.jpg" data-caption="Forever Grateful For You ❤️">
-            <div class="polaroid-frame">
-              <img src="assets/photo2.jpg" alt="Ehmaa Photo 2" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&auto=format&fit=crop'" />
-            </div>
-            <p class="polaroid-caption">Forever Grateful For You ❤️</p>
           </div>
 
         </div>
       </section>
 
-      <!-- Action Buttons -->
-      <div class="action-bar">
-        <button id="gift-btn" class="btn secondary-btn">🎁 Open Gift</button>
-        <button id="memories-btn" class="btn secondary-btn">📸 View Memories</button>
-        <button id="replay-btn" class="btn primary-btn">✨ Replay Magic 🪄</button>
-      </div>
+      <!-- Interactive birthday gift -->
+      <section class="gift-section" aria-label="Birthday gift">
 
-      <!-- Final Heartfelt Footer -->
-      <footer class="final-wishes-footer glass-card">
-        <div class="moon-icon">🌙✨</div>
-        <p class="final-text">
-          "May your life always be filled with happiness, beautiful opportunities, unforgettable memories, and endless reasons to smile. Keep shining, Ehmaa! Happy Birthday, Sathi! ❤️✨"
+        <h2 class="card-heading">
+          A Little Gift for You 🎁
+        </h2>
+
+        <p class="section-subtitle">
+          Something special is waiting for you, Rekha. 💗
         </p>
+
+        <div
+          id="gift-box"
+          class="gift-box"
+          role="button"
+          tabindex="0"
+          aria-label="Open your birthday gift"
+        >
+          <div class="gift-lid" aria-hidden="true">🎁</div>
+
+          <div class="gift-body">
+            <span class="tap-hint">Tap to Open Your Gift! ✨</span>
+          </div>
+        </div>
+
+        <!-- JavaScript reveals this special message -->
+        <div
+          id="gift-message"
+          class="glass-card gift-message hidden"
+          aria-live="polite"
+        >
+          <h2 class="card-heading">
+            A Little Surprise for You 💝
+          </h2>
+
+          <p class="gift-message-text"></p>
+        </div>
+
+      </section>
+
+      <!-- Personal birthday wish -->
+      <section class="glass-card message-card">
+        <h2 class="card-heading">
+          A Special Wish for You 💌
+        </h2>
+
+        <p
+          id="typewriter-text"
+          class="typewriter-container"
+          aria-live="polite"
+        ></p>
+      </section>
+
+      <!-- Photo gallery: original filenames preserved -->
+      <section class="gallery-section">
+
+        <h2 class="section-title">
+          Our Precious Memories 📸
+        </h2>
+
+        <p class="section-subtitle">
+          Every picture holds a little piece of happiness. 💜
+          Tap any picture to view it.
+        </p>
+
+        <div class="polaroid-grid">
+
+          <!-- Photo 1 -->
+          <div
+            class="polaroid-card"
+            data-img="assets/cartoon1.jpg"
+            data-caption="Good Friends... Better Memories ♡"
+          >
+            <div class="polaroid-frame">
+              <img
+                src="assets/cartoon1.jpg"
+                alt="Birthday memory illustration"
+                loading="lazy"
+              />
+            </div>
+
+            <p class="polaroid-caption">
+              Good Friends... Better Memories ♡
+            </p>
+          </div>
+
+          <!-- Photo 2 -->
+          <div
+            class="polaroid-card"
+            data-img="assets/cartoon2.jpg"
+            data-caption="Our Special Sathi ♡"
+          >
+            <div class="polaroid-frame">
+              <img
+                src="assets/cartoon2.jpg"
+                alt="Birthday cartoon memory"
+                loading="lazy"
+              />
+            </div>
+
+            <p class="polaroid-caption">
+              Our Special Sathi ♡
+            </p>
+          </div>
+
+          <!-- Photo 3 -->
+          <div
+            class="polaroid-card"
+            data-img="assets/photo1.jpg"
+            data-caption="Keep Shining, Beautiful Soul! ✨"
+          >
+            <div class="polaroid-frame">
+              <img
+                src="assets/photo1.jpg"
+                alt="Birthday memory photo one"
+                loading="lazy"
+              />
+            </div>
+
+            <p class="polaroid-caption">
+              Keep Shining, Beautiful Soul! ✨
+            </p>
+          </div>
+
+          <!-- Photo 4 -->
+          <div
+            class="polaroid-card"
+            data-img="assets/photo2.jpg"
+            data-caption="Forever Grateful for You ❤️"
+          >
+            <div class="polaroid-frame">
+              <img
+                src="assets/photo2.jpg"
+                alt="Birthday memory photo two"
+                loading="lazy"
+              />
+            </div>
+
+            <p class="polaroid-caption">
+              Forever Grateful for You ❤️
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Birthday action buttons -->
+      <nav class="action-bar" aria-label="Birthday actions">
+
+        <button
+          id="gift-btn"
+          class="btn secondary-btn"
+          type="button"
+        >
+          🎁 Open Gift
+        </button>
+
+        <button
+          id="memories-btn"
+          class="btn secondary-btn"
+          type="button"
+        >
+          📸 View Memories
+        </button>
+
+        <button
+          id="replay-btn"
+          class="btn primary-btn"
+          type="button"
+        >
+          ✨ Replay Magic 🪄
+        </button>
+
+      </nav>
+
+      <!-- Final birthday message -->
+      <footer class="final-wishes-footer glass-card">
+
+        <div class="moon-icon" aria-hidden="true">
+          🌙💜✨
+        </div>
+
+        <p class="final-text">
+          May your life always be filled with happiness,
+          beautiful opportunities, unforgettable memories,
+          and endless reasons to smile.
+
+          Keep shining, Rekha!
+          Happy Birthday, Sathi! ❤️🎂✨
+        </p>
+
+        <p class="signature">
+          Made with lots of love, just for you. 💌
+        </p>
+
       </footer>
 
     </section>
-
   </main>
 
-  <!-- Lightbox Modal -->
-  <div id="lightbox" class="lightbox-modal hidden">
-    <span id="lightbox-close" class="lightbox-close">&times;</span>
+  <!-- Full-size photo lightbox -->
+  <div
+    id="lightbox"
+    class="lightbox-modal hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Birthday photo viewer"
+  >
+    <button
+      id="lightbox-close"
+      class="lightbox-close"
+      type="button"
+      aria-label="Close photo viewer"
+    >
+      &times;
+    </button>
+
     <div class="lightbox-content">
-      <img id="lightbox-img" src="" alt="Enlarged Photo" />
-      <p id="lightbox-caption" class="lightbox-caption"></p>
+
+      <img
+        id="lightbox-img"
+        src=""
+        alt="Enlarged birthday memory"
+      />
+
+      <p
+        id="lightbox-caption"
+        class="lightbox-caption"
+      ></p>
+
     </div>
   </div>
 
+  <!-- Your JavaScript -->
   <script src="script.js"></script>
+
 </body>
 </html>
-
